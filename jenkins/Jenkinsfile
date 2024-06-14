@@ -12,8 +12,9 @@ pipeline {
             }
             post {
                 always {
-                    echo 'test'
-                    // junit 'target/surefire-reports/*.xml'
+                    echo 'junit test'
+                    sh 'ls -lt'
+                    junit 'target/surefire-reports/*.xml'
                 }
             }
         }
